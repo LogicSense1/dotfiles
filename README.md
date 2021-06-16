@@ -2,7 +2,7 @@
 
 ```
 cd ~
-sudo dnf install zsh bat thefuck vim
+sudo dnf install zsh bat thefuck vim exa
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 wget https://github.com/zsh-users/antigen/releases/download/v2.2.3/antigen.zsh
 cp zsh/zsh.config ~/.zshrc
