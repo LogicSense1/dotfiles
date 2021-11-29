@@ -23,6 +23,11 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 sh -c "$(curl -fsSL https://git.io/zinit-install)"
 ```
 
+安装lunarvim
+```
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+```
+
 拷贝配置文件
 ```
 git clone https://github.com/VinKK1998/dotfiles.git
