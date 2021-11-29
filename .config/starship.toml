@@ -1,11 +1,12 @@
-format="$all$status$line_break$character"
+format="$all$status$line_break$character${custom.iterm2}"
 
 [conda]
 symbol = " "
-format = "via [$symbol$environment](green)"
+format = "via [$symbol$environment](green) "
 ignore_base = false
 
 [character]
+format = "$symbol "
 error_symbol = "[✗](bold red)"
 
 [cmd_duration]
@@ -75,3 +76,9 @@ disabled = false
 style_user = "bold purple"
 show_always = true
 format = "with [$user]($style)@"
+
+[custom.iterm2]
+style = ""
+command = 'echo "\033]133;A\007"'   # shows output of command
+format = "[$output]($style)"
+when = "true"

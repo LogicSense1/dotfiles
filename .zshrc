@@ -1,6 +1,11 @@
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 export https_proxy=http://127.0.0.1:7890
 export PATH=/Applications/CMake.app/Contents/bin:$HOME/.local/bin:$PATH
 export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
@@ -42,24 +47,37 @@ alias cat='bat'
 alias la='exa -al'
 alias cls='clear'
 alias hpc='ssh hpc'
-alias vim='nvim'
+alias vim='lvim'
 alias ps='procs'
 alias find='fd'
 alias du='dust'
 alias df='duf -hide-fs nullfs -only local'
 
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/wentianxia/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/wentianxia/.local/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/wentianxia/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/wentianxia/miniforge3/etc/profile.d/conda.sh"
+    if [ -f "/Users/wentianxia/.local/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/wentianxia/.local/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/wentianxia/miniforge3/bin:$PATH"
+        export PATH="/Users/wentianxia/.local/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 eval "$(starship init zsh)"
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+export ITERM2_SQUELCH_MARK=1
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
