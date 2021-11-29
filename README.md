@@ -6,7 +6,7 @@
 ```
 Brew安装需要的软件
 ```
-brew install bat neovim dust exa fd htop ncdu node ffmpeg duf
+brew install bat neovim dust exa fd htop ncdu node ffmpeg duf tealdeer
 ```
 安装rust
 ```
@@ -28,6 +28,6 @@ sh -c "$(curl -fsSL https://git.io/zinit-install)"
 git clone https://github.com/VinKK1998/dotfiles.git
 cd dotfiles
 mv ~/.zshrc ~/.zshrc.bak
-mv ./.zshrc ~/.zshrc
-mv .config ~/.config
+mv .zshrc ~/.zshrc
+mv .config ~
 ```
